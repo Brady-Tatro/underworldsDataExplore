@@ -6,8 +6,6 @@ import { Feather, AntDesign } from '@expo/vector-icons';
 const IndexScreen = ({ navigation }) => {
     const {state, NewGame} = useContext(Context)
 
-    console.log(state)
-    console.log("hello there")
     return (
         <View>
             <Button title="New Game" 

@@ -8,7 +8,7 @@ const NewGame = ({ navigation }) => {
 
     return (
         <NewGameForm
-            onSubmit={(title, result, finalScore) => { newGame(title, result, finalScore, () => navigation.navigate('Index')) }}
+            onSubmit={(playerWB, opponentWB, playerGlory, opponentGlory) => { newGame(playerWB, opponentWB, playerGlory, opponentGlory, () => navigation.navigate('Index')) }}
         />
     )
 }

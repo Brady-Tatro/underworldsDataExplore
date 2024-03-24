@@ -4,19 +4,16 @@ import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 const NewGameForm = ({ onSubmit, initialValues }) => {
-  const [title, setTitle] = useState(initialValues.title)
-  const [result, setResult] = useState(initialValues.result)
-  const [finalScore, setFinalScore] = useState(initialValues.finalScore)
-  const [endGloryPlayer, setEndGloryPlayer] = useState(initialValues.endGloryPlayer)
-  const [endGloryOpponent, setEndGloryOpponent] = useState(initialValues.endGloryOpponent)
+  const [playerGlory, setPlayerGlory] = useState(initialValues.playerGlory)
+  const [opponentGlory, setOpponentGlory] = useState(initialValues.opponentGlory)
 
   const [playerOpen, setPlayerOpen] = useState(false);
   const [opponentOpen, setOpponentOpen] = useState(false);
-  const [currentPlayerArmyValue, setPlayerArmy] = useState(null);
-  const [currentOpponentArmyValue, setOpponentArmy] = useState(null);
+  const [playerWB, setPlayerWB] = useState(null);
+  const [opponentWB, setOpponentWB] = useState(null);
   const armies = [
-    {label: 'The Headmans Curse', value: 'theHeadMansCurse'},
-    {label: 'The Grymwatch', value: 'theGrymwatch'}
+    {label: 'The Headmans Curse', value: 'The HeadMans Curse'},
+    {label: 'The Grymwatch', value: 'The Grymwatch'}
   ]
 
   const onPlayerOpen = useCallback(() => {
@@ -25,23 +22,6 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
   const onOpponentOpen = useCallback(() => {
     setPlayerOpen(false);
   }, []);
-
-  function createTitle() {
-    var fullTile = `${currentPlayerArmyValue} vs ${currentOpponentArmyValue}`
-    console.log('title')
-    console.log(fullTile)
-    setTitle(fullTile)
-  }
-  
-  function getWinner(){
-    var result = endGloryPlayer > endGloryOpponent ? "You Won" : "You Lost"
-    setResult(result)
-  }
-  
-  function getFinalScore(){
-    var finalScore = `You Scored: ${endGloryPlayer} Opponent Scored: ${endGloryOpponent} `
-    setFinalScore(finalScore)
-  }
     
   return(
     <View>
@@ -50,8 +30,8 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
           setOpen={() => setPlayerOpen(!playerOpen)}
           onOpen={onPlayerOpen}
           items={armies}
-          value={currentPlayerArmyValue}
-          setValue={(value) => setPlayerArmy(value)}
+          value={playerWB}
+          setValue={(value) => setPlayerWB(value)}
           containerStyle={{zIndex: playerOpen ? 1000 : 0}}
           />
       <DropDownPicker
@@ -59,29 +39,29 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
           setOpen={() => setOpponentOpen(!opponentOpen)}
           onOpen={onOpponentOpen}
           items={armies}
-          value={currentOpponentArmyValue}
-          setValue={(value) => setOpponentArmy(value)}
+          value={opponentWB}
+          setValue={(value) => setOpponentWB(value)}
           containerStyle={{zIndex: playerOpen ? 1000 : 0}}
       />
         
       <TextInput 
         keyboardType="numeric"
-        onChangeText={(endGloryPlayer) => setEndGloryPlayer(endGloryPlayer)}
-        value={endGloryPlayer}
+        onChangeText={(playerGlory) => setPlayerGlory(playerGlory)}
+        value={playerGlory}
         style={styles.input}
         defaultValue="0"
       />
       <TextInput 
         keyboardType="numeric"
-        onChangeText={(endGloryOpponent) => setEndGloryOpponent(endGloryOpponent)}
-        value={endGloryOpponent}
+        onChangeText={(opponentGlory) => setOpponentGlory(opponentGlory)}
+        value={opponentGlory}
         style={styles.input}
         defaultValue="0"
       />
 
       <Button
         title='Submit Game'
-        onPress={() => onSubmit(title, result, finalscore)}
+        onPress={() => onSubmit(playerWB, opponentWB, playerGlory, opponentGlory)}
       />
     </View>
   )
@@ -89,11 +69,8 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
 
 NewGameForm.defaultProps = {
   initialValues: {
-    title: '',
-    result: '',
-    endGloryPlayer: "0",
-    endGloryOpponent: "0", 
-    finalScore: ''
+    playerGlory: "0",
+    opponentGlory: "0"
   }
 }
 
