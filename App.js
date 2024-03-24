@@ -3,12 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import IndexScreen from './src/IndexScreen';
-import NewGame from './src/CreateGame';
+import NewGame from './src/CreateGameScreen';
 import { Provider } from './src/context/GameContext';
 
 const navigator = createStackNavigator({
   Index: IndexScreen,
-  NewGame: NewGame
+  CreateGame: NewGame
 }, {
   initialRouteName: 'Index',
   defaultNavigationOptions: {
