@@ -10,7 +10,7 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
   const [opponentWB, setOpponentWB] = useState(null);
     
   return(
-    <View>
+    <View style={styles.index}>
       <WarBandDropDown 
         playerWB={playerWB}
         opponentWB={opponentWB}
@@ -24,6 +24,7 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
         value={playerGlory}
         style={styles.input}
         defaultValue="0"
+        zIndex={-1}
       />
       <TextInput 
         keyboardType="numeric"
@@ -31,6 +32,7 @@ const NewGameForm = ({ onSubmit, initialValues }) => {
         value={opponentGlory}
         style={styles.input}
         defaultValue="0"
+        zIndex={-1}
       />
 
       <Button
@@ -56,6 +58,9 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     padding: 5,
     margin: 5
+  },
+  index: {
+    zIndex: -1
   }
 })
 

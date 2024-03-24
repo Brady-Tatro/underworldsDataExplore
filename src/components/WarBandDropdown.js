@@ -1,14 +1,12 @@
 import React, { useCallback, useState } from "react";
 import { View, Text, StyleSheet, Button, TextInput } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+import WARBANDS from "../constants/warbands";
 
 const WarBandDropDown = ({ playerWB, opponentWB, playerWBSet, opponentWBSet }) => {
   const [playerOpen, setPlayerOpen] = useState(false);
   const [opponentOpen, setOpponentOpen] = useState(false);
-  const armies = [
-    {label: 'The Headmans Curse', value: 'The HeadMans Curse'},
-    {label: 'The Grymwatch', value: 'The Grymwatch'}
-  ]
+  const armies = WARBANDS
 
   const onPlayerOpen = useCallback(() => {
     setOpponentOpen(false);
@@ -18,27 +16,36 @@ const WarBandDropDown = ({ playerWB, opponentWB, playerWBSet, opponentWBSet }) =
   }, []);
 
   return (
-    <View>
+    <View style={StyleSheet.parentView}>
       <DropDownPicker
             open={playerOpen}
             setOpen={() => setPlayerOpen(!playerOpen)}
             onOpen={onPlayerOpen}
-            items={armies}
+            items={WARBANDS}
             value={playerWB}
             setValue={(value) => playerWBSet(value)}
-            containerStyle={{zIndex: playerOpen ? 1000 : 0}}
+            placeholder="Select Your Warband"
+            zindex={200}
             />
       <DropDownPicker
           open={opponentOpen}
           setOpen={() => setOpponentOpen(!opponentOpen)}
           onOpen={onOpponentOpen}
-          items={armies}
+          items={WARBANDS}
           value={opponentWB}
           setValue={(value) => opponentWBSet(value)}
-          containerStyle={{zIndex: playerOpen ? 1000 : 0}}
+          placeholder="Select Opponent's warband"
+          zIndex={100}
       />
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  parentView: {
+    zIndex: 1000
+  }
+
+})
 
 export default WarBandDropDown
