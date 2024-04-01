@@ -35,3 +35,36 @@ export const DESTRUCTIONWARBANDS = [
   { warband: "Daggok's Stab-ladz", symbol: require("../../assets/daggoks-stab-ladz-icon.png")}
 ]
 
+export const CHAOSWARBANDS = [
+  { warband: "Garrek's Reavers", symbol: require("../../assets/garreks-reavers-icon.png")},
+  { warband: "Spiteclaw's Swarm", symbol: require("../../assets/spiteclaws-swarm-icon.png")},
+  { warband: "Magore's Fiends", symbol: require("../../assets/magores-fiends-icon.png")},
+  { warband: "Eyes of the Nine", symbol: require("../../assets/eyes-of-the-nine-icon.png")},
+  { warband: "Godsworn Hunt", symbol: require("../../assets/godsworn-hunt-icon.png")},
+  { warband: "Grashrak's Despoilers", symbol: require("../../assets/grashraks-despoilers-icon.png")},
+  { warband: "The Wurmspat", symbol: require("../../assets/the-wurmspat-icon.png")},
+  { warband: "The Dread Pageant", symbol: require("../../assets/the-dread-pageant-icon.png")},
+  { warband: "Khagra's Ravagrs", symbol: require("../../assets/khagras-ravagers-icon.png")},
+  { warband: "Skittershank's Clawpack", symbol: require("../../assets/skittershanks-clawpack-icon.png")},
+  { warband: "Gorechosen of Dromm", symbol: require("../../assets/gorechosen-of-dromm-icon.png")},
+  { warband: "Gnarlspirit Pack", symbol: require("../../assets/gnarlspirit-pack-icon.png")},
+  { warband: "Ephilim's Pandaemonium", symbol: require("../../assets/ephilims-pandaemonium-icon.png")},
+  { warband: "Skabbik's Plaguepack", symbol: require("../../assets/skabbiks-plaguepack-icon.png")},
+  { warband: "The Thricefold Discord", symbol: require("../../assets/the-thricefold-discord-icon.png")}
+]
+
+export const DEATHWARBANDS = [
+  { warband: "Sepulchral Guard", symbol: require("../../assets/sepulchral-guard-icon.png")},
+  { warband: "Thorns of the Briar Queen", symbol: require("../../assets/thorns-of-the-briar-queen-icon.png")},
+  { warband: "Lady Harrow's Mournflight", symbol: require("../../assets/lady-harrows-mournflight-icon.png")},
+  { warband: "The Grymwatch", symbol: require("../../assets/the-grymwatch-icon.png")},
+  { warband: "The Crimson Court", symbol: require("../../assets/the-crimson-court-icon.png")},
+  { warband: "Kainan's Reapers", symbol: require("../../assets/khagras-ravagers-icon.png")},
+  { warband: "Drepur's Wraithcreepers", symbol: require("../../assets/drepurs-wraithcreepers-icon.png")},
+  { warband: "The Exiled Dead", symbol: require("../../assets/the-exiled-dead-icon.png")},
+  { warband: "Sons of Velmorn", symbol: require("../../assets/sons-of-velmorn-icon.png")},
+  { warband: "The Headsmen's Curse", symbol: require("../../assets/the-headsmens-curse-icon.png")},
+  { warband: "Zondara's Gravebreakers", symbol: require("../../assets/zondaras-gravebreakers-icon.png")},
+  { warband: "The Skinnerkin", symbol: require("../../assets/the-skinnerkin-icon.png")}
+]
+
